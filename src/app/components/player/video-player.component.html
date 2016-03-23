@@ -1,0 +1,58 @@
+
+<div id="player" (keyup.q)="toggleFullScreen()"  >
+    <video id="video" 
+        (loadedmetadata)="onLoadMetaData()"
+        (timeupdate)="onProgressUpdated()"
+        (play) ="onPlayStatusChanged($event.target, 'pause')"
+        (pause) ="onPlayStatusChanged($event.target, 'play')"
+        (volumechange)="onVolumeChanged($event.target)"
+        
+        [fullscreen]="isFullScreen"      
+        
+        controls>
+        <source *ngFor="#src of sources" [src]="src.src" [type]="src.typ">
+    </video>
+    <div id="controls">
+                 
+
+        <button id="fullScreen" title="full screen" (click)="toggleFullScreen()">  [+] </button>                         
+        <button id="play-pause" class="play" title="play" (click)="togglePnP()" >Play</button>
+        <button id="stop" class="stop" title="stop" title="stop" (click)="stop()">Stop</button>
+        <button id="volume-inc" class="volume-inc" title="increase volume" (click)="changeVolume('+')">Increase volume</button>
+        <button id="volume-dec" class="volume-dec" title="decrease volume" (click)="changeVolume('-')">Decrease volume</button>
+        
+        <button id="mute" class="mute" title="mute" (click)="toggleMute()">Mute</button>
+        
+        <button id="replay" class="replay" title="replay" (click)="onSeek(0)">Restart</button>
+        <button id="rewind" title="rewind"  (click)="onSeek(-1)">&lt;&lt;</button>
+        <button id="forward" title="forward"  (click)="onSeek(+1)">&gt;&gt;</button>
+        
+        <button id="faster" title="faster playback" (click)="onSpeed(0)">x 1</button>
+        <button id="slower" title="slower playback" (click)="onSpeed(-1)">x 0.75</button> 
+        <button id="faster" title="faster playback" (click)="onSpeed(+1)">x 1.25</button>
+
+        <progress
+            id="progress-bar"
+            [max]="progress.max"
+            [value]="progress.value"
+            (mousedown)="onMouseDown($event)"
+            (mousemove3)="onMouseMove($event)"
+            (mousedown)="onMouseUp($event)" >
+         </progress>
+         <span>{{progressText}}</span>
+
+    </div>
+
+    <!--<div id="play-list">
+        <h2>Play list </h2>
+        <ul>
+            <li *ngFor="#single of playlist"><span class="play-item" (click)="loadVideos('abc.mp4')">{{single}}</span></li>
+        </ul> 
+    </div>-->
+   
+</div>
+
+<!--be careful the diffence between the 2 attrs.
+    <p [myHighlight]="color" [defaultColor]="'violet'">
+-->
+

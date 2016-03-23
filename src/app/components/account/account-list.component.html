@@ -1,0 +1,13 @@
+<div>
+    <div *ngIf="chart">
+        <!--<label>{{chart.title}}</label>-->
+        <pagination [params]="pagingParams"></pagination>
+        
+        <ul>
+            <li *ngFor="#sub of chart.subjects; #i = index" class="subject">
+                <subject [info]="sub" [index]="queryParams.start+i" (play)="onPlay($event)" ></subject>
+            <li>    
+        </ul>
+    </div>
+
+</div>

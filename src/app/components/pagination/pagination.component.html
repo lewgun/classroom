@@ -1,0 +1,12 @@
+<div>
+	<ul >
+			<li class=""><a (click)="doGoTo(1)">首页</a></li>
+			<li><a (click)="doPageTurning(curPage-1)" [class.disabled]= "curPage <= 1">上页</a></li>
+            <li *ngFor="#p of pages;" class="index" [class.selected] = "(p == curPage)" ><a (click)="doPageTurning(p)">{{p}}</a></li>
+			<li><a (click)="doPageTurning(curPage+1)" [class.disabled]= "curPage>=totalPages" >下页</a></li>
+			<li><a (click)="doGoTo(totalPages)">尾页</a></li>
+            <input type="text" placeholder="go" (keyup.enter)= "doGoTo($event.target.value)" />
+		</ul>
+
+		<div class="clear">
+<div>

@@ -1,0 +1,28 @@
+<div id="container">
+    <header>
+        <a class="logout" (click)="onLogout($event)">退出</a>
+    </header>
+
+    <div id="content">
+        <nav>
+            <ul>
+                <li *ngFor="#group of groups; #i = index">
+                    <label class="title">{{group.name}}</label>       
+                    <ul>
+                        <li *ngFor="#item of group.items; #j = index" class="item" (click)="onSelect(item)" >
+                            <a  [class.selected]="(item == selected) || ( (selected == null) &&(i==0 && j==0))" [routerLink]="[item.link]">{{item.name}}</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+            </ul>
+        </nav>
+        <div class="playground">
+            <myrouter-outlet></myrouter-outlet>
+        </div>
+    </div>
+</div>
+<footer>
+    Copyright (c) 2016 by lewgun
+</footer>    

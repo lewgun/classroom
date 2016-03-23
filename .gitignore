@@ -1,0 +1,8 @@
+#Folders
+node_modules
+
+#ext
+*.js
+*.js.map
+
+npm-debug.*

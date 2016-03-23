@@ -1,0 +1,67 @@
+.cover {
+	float: left;
+	margin: 10px 0px  0px 10px;
+}
+
+.cover em {
+	margin-right: 10px;
+	color: #bbb;
+	float: left;
+
+}
+
+.summary {
+	height: 100%;
+	line-height: 100%;
+	margin: 10px 0px  0px 20px;
+	float: left;
+}
+
+
+.clear {
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: #669;
+	font-size: 14px;
+    line-height: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a:hover {
+	color: whitesmoke;
+	background-color: royalblue;
+}
+
+.bd {
+
+    font-size: 12px;
+    line-height: 1.62;
+    font-family: Helvetica, Arial, sans-serif;
+	
+	margin-top: 8px;
+}
+
+.bd p {
+	margin: 10px 0;
+    color: #666;
+}
+
+.star span {
+      display: inline-block; 
+}
+
+.star .rating{
+    width:  55px;
+    height: 11px;
+    margin-right: 3px;
+    background:  url("../resource/ic_rating_s.png") no-repeat  scroll;
+ }
+
+
+.star .avg {
+    color: #e09015;
+    margin-right: 5px;
+}
+
